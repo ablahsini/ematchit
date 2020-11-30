@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="col-md-4 centerDiv">
+        <label><b>Upload your CV</b></label>
+        <div class="input-group">
+            <div class="custom-file">
+            <input type="file" class="custom-file-input" id="inputGroupFile04" (change)="fileProgress($event)">
+            <label class="custom-file-label" for="inputGroupFile04">{{ resumeName }}</label>
+          </div>
+        </div>
+        <div class="ui indicating bar progress"></div>
+        <button class="btn btn-primary" [disabled]="!loadedResume" (click)="onSubmit($event)">Submit</button>
+      </div>     
+</div>
+
+<div class="ui horizontal divider col-md-10" *ngIf="edit">Review</div>
+  
+<div class="container col-md-6 centerDiv" *ngIf="edit"> 
+  
+  <form #blocsform="ngForm" (ngSubmit)="onExport()">
+    <div style="justify-content: flex-start;" class="container col-md-8" >
+      <div class="form-group">
+          <label>Name*</label>
+          <textarea  class="form-control" required name="cvOwner" [(ngModel)]="cvOwner" 
+          placeholder="Please input a name..." rows="1"></textarea>
+          <label>email</label>
+          <textarea class="form-control" name="email" [(ngModel)]="email" rows="1"></textarea>
+          <label>Phone</label>
+          <textarea class="form-control" name="phone" [(ngModel)]="phone" rows="1"></textarea>         
+      </div>
+    </div>
+      <div class="form-group">
+          <label>Summary</label>
+          <textarea class="form-control" name="others" [(ngModel)]="others" rows="7"></textarea>
+      </div>
+    <div class="form-group">
+        <label>Education</label>
+        <textarea class="form-control" name="education" [(ngModel)]="education"  rows="10"></textarea>
+    </div>
+    <div class="form-group">
+        <label>Experience</label>
+        <textarea class="form-control" name="experience"  [(ngModel)]="experience" rows="20"></textarea>
+    </div>
+    <div class="form-group">
+        <label>Skills</label>
+        <textarea class="form-control" name="skills" [(ngModel)]="skills"  rows="10"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Misc</label>
+      <textarea class="form-control" name="misc" [(ngModel)]="misc"  rows="5"></textarea>
+    </div>
+    <Button class="ui primary button" [disabled]="blocsform.invalid" >Export & Download<i class="right arrow icon"></i></Button>
+  </form>
+</div>

@@ -1,0 +1,64 @@
+
+<div class = "content">
+    <div class="ui inverted vertical masthead center aligned segment">
+        <div class="ui container">
+            <div class="ui large secondary inverted pointing menu">
+            <a class="toc item">
+                <i class="sidebar icon"></i>
+            </a>
+            <a class="item" [routerLink]="['/home']" routerLinkActive="active" >Home</a>
+            <!-- <a class="item" [routerLink]="['/uploader']" routerLinkActive="active" >Upload</a> -->
+            <a class="item" [routerLink]="['/parser']" routerLinkActive="active" >Upload</a>
+            <div *ngIf="authenticated == false" class="right item">
+                <a class="ui inverted button" [routerLink]="['/login']" routerLinkActive="active">Log in</a>
+            </div>
+            <div *ngIf="authenticated" class="right item navbar-text">
+                <i class="user icon"></i>      
+                <div>Welcome</div>           
+            </div>
+            </div>
+        </div>
+    </div>  
+</div>
+
+<router-outlet></router-outlet>
+
+<div class="espace"></div>
+
+<!-- <div class="ui inverted vertical footer segment">
+    <div class="ui center aligned container">
+      <div class="ui stackable inverted divided grid">
+        <div class="three wide column">
+          <h4 class="ui inverted header">Services</h4>
+          <div class="ui inverted link list">
+            <a href="#" class="item">Link One</a>
+            <a href="#" class="item">Link Two</a>
+            <a href="#" class="item">Link Three</a>
+            <a href="#" class="item">Link Four</a>
+          </div>
+        </div>
+        <div class="three wide column">
+            <h4 class="ui inverted header">Professionals</h4>
+            <div class="ui inverted link list">
+              <a href="#" class="item">Link One</a>
+              <a href="#" class="item">Link Two</a>
+              <a href="#" class="item">Link Three</a>
+              <a href="#" class="item">Link Four</a>
+            </div>
+          </div>
+
+          <div class="ten wide right floated column">
+            <h4 class="ui inverted header">Footer Header</h4>
+            <p>Extra space for a call to action.</p>
+
+          </div>
+      </div>
+      <div class="ui inverted section divider"></div>
+      <div class="ui horizontal inverted small divided link list">
+        <a class="item" href="#">Site Map</a>
+        <a class="item" href="#">Contact Us</a>
+        <a class="item" href="#">Terms and Conditions</a>
+        <a class="item" href="#">Privacy Policy</a>
+      </div> 
+    </div>
+  </div> -->
